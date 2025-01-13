@@ -461,12 +461,11 @@ function getIdentityMatrix(n) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(numbers ) {
+function getIndicesOfOddNumbers(numbers) {
   const oddElemArr = numbers.filter((num) => num % 2 !== 0);
 
   return oddElemArr.map((num) => numbers.indexOf(num));
 }
-
 
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
@@ -478,7 +477,7 @@ function getIndicesOfOddNumbers(numbers ) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues( arr ) {
+function getHexRGBValues(arr) {
   return arr.map(
     (elem) => `#${elem.toString(16).toUpperCase().padStart(6, '0')}`
   );
@@ -533,19 +532,19 @@ function findCommonElements(arr1, arr2) {
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => longest is [7, 40, 80] => 3
  */
 function findLongestIncreasingSubsequence(nums) {
-   // throw new Error('Not implemented');
-   let arrNumIncreasing = [];
-   let tempCount = 1;
- 
-   arrNumIncreasing = nums.map((num, i) => {
-     if (i !== nums.length - 1) {
-       tempCount = num < nums[i + 1] ? (tempCount += 1) : 0;
-     } else {
-       tempCount = num > nums[i - 1] ? (tempCount += 1) : 0;
-     }
-     return tempCount;
-   });
-   return Math.max(...arrNumIncreasing);
+  // throw new Error('Not implemented');
+  let arrNumIncreasing = [];
+  let tempCount = 1;
+
+  arrNumIncreasing = nums.map((num, i) => {
+    if (i !== nums.length - 1) {
+      tempCount = num < nums[i + 1] ? (tempCount += 1) : 0;
+    } else {
+      tempCount = num > nums[i - 1] ? (tempCount += 1) : 0;
+    }
+    return tempCount;
+  });
+  return Math.max(...arrNumIncreasing);
 }
 
 /**
@@ -642,7 +641,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail( arr ) {
+function swapHeadAndTail(arr) {
   if (arr.length <= 1) return arr;
 
   const headArr = arr.slice(0, arr.length / 2);
